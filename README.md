@@ -1,36 +1,100 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# DevSearch - Suivi de Stage & Analyseur IA
 
-## Getting Started
+Application web moderne pour gérer vos candidatures de stage avec l'aide de l'intelligence artificielle.
 
-First, run the development server:
+## 🚀 Fonctionnalités
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Tableau de bord** : Visualisez et gérez toutes vos candidatures
+- **Analyse IA** : Analysez automatiquement la correspondance entre votre CV et les offres d'emploi
+- **Génération de lettres** : Lettres de motivation personnalisées générées par l'IA
+- **Conseils d'entretien** : Recommandations spécifiques pour chaque poste
+- **Suivi de statut** : Suivez l'évolution de vos candidatures (Postulé, Entretien, Refusé, Offre)
+
+## 🛠️ Stack Technique
+
+- **Frontend** : Next.js 14, React, TypeScript, TailwindCSS
+- **UI** : shadcn/ui components
+- **Backend** : Supabase (PostgreSQL + Auth + Edge Functions)
+- **IA** : OpenAI API (GPT-4o-mini)
+- **Déploiement** : Vercel
+
+## 📦 Installation
+
+1. **Cloner le projet**
+   ```bash
+   cd /Users/keomalima/Downloads/devsearch
+   ```
+
+2. **Installer les dépendances**
+   ```bash
+   npm install
+   ```
+
+3. **Configurer les variables d'environnement**
+   
+   Créez un fichier `.env.local` à la racine du projet :
+   ```env
+   NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+   SUPABASE_SERVICE_ROLE_KEY=your_service_role_key
+   OPENAI_API_KEY=your_openai_api_key
+   ```
+
+4. **Configurer Supabase**
+   
+   - Créez un projet sur [Supabase](https://supabase.com)
+   - Exécutez le script SQL dans `supabase/schema.sql` via l'éditeur SQL de Supabase
+   - Activez l'authentification par email dans les paramètres
+
+5. **Lancer le serveur de développement**
+   ```bash
+   npm run dev
+   ```
+
+6. **Ouvrir l'application**
+   
+   Visitez [http://localhost:3000](http://localhost:3000)
+
+## 🎯 Utilisation
+
+1. **Créer un compte** : Inscrivez-vous avec votre email
+2. **Configurer votre profil** : Ajoutez votre CV et vos préférences dans la page Profil
+3. **Analyser une offre** : Collez une description de poste et laissez l'IA analyser
+4. **Sauvegarder** : Enregistrez l'analyse dans votre tableau de bord
+5. **Suivre vos candidatures** : Mettez à jour les statuts au fur et à mesure
+
+## 📁 Structure du Projet
+
+```
+devsearch/
+├── app/                      # Pages Next.js
+│   ├── api/                  # API routes
+│   ├── analyze/              # Page d'analyse
+│   ├── offers/[id]/          # Détails d'une offre
+│   ├── profile/              # Page de profil
+│   └── page.tsx              # Dashboard
+├── components/               # Composants React
+│   ├── ui/                   # shadcn/ui components
+│   ├── ApplicationTable.tsx
+│   ├── AnalysisCard.tsx
+│   ├── MatchRateGauge.tsx
+│   └── StatusBadge.tsx
+├── lib/                      # Utilitaires
+│   ├── openai/               # Intégration OpenAI
+│   ├── supabase/             # Clients Supabase
+│   └── types.ts              # Types TypeScript
+└── supabase/
+    └── schema.sql            # Schéma de base de données
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🔑 Configuration OpenAI
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+L'application utilise GPT-4o-mini pour l'analyse. Vous pouvez modifier le modèle dans `lib/openai/client.ts` si nécessaire.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🎨 Design
 
-## Learn More
+L'application utilise un thème sombre par défaut avec une esthétique moderne et minimaliste. Les composants sont construits avec shadcn/ui et TailwindCSS.
 
-To learn more about Next.js, take a look at the following resources:
+## 📝 License
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT
