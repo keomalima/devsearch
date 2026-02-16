@@ -65,39 +65,40 @@ FORMAT DE SORTIE (JSON STRICT)
 -----------------------------------
 
 {
-  "match_rate": <nombre entre 0-100, sois réaliste>,
-  "tech_stack": [<technologies mentionnées dans l'offre>],
+  "match_rate": "Score réaliste (0-100). Déduire 10 points par 'Critical Gap' identifié.",
+  "tech_stack": ["Liste exhaustive des technos de l'offre"],
   "real_priorities": [
-    "Ce qu'ils valorisent vraiment (2-3 points)"
+    "Priorité business (ex: stabiliser l'existant plutôt que créer du neuf)",
+    "Priorité d'équipe (ex: besoin de leadership technique vs exécution pure)"
   ],
   "hidden_expectations": [
-    "Ce qui est sous-entendu mais non écrit (1-2 points)"
+    "Ce qui est lu entre les lignes (ex: forte tolérance à l'ambiguïté, autonomie totale)"
   ],
   "fit_analysis": {
-    "strong_match": ["Points forts du candidat pour ce poste"],
-    "weak_match": ["Points moyens ou à améliorer"],
-    "critical_gaps": ["Lacunes critiques qui pourraient bloquer"]
+    "strong_match": ["Compétences prouvées par des réalisations passées"],
+    "weak_match": ["Compétences présentes mais nécessitant une mise à niveau"],
+    "critical_gaps": ["Absence de compétence bloquante pour les missions critiques"]
   },
   "strategic_verdict": {
     "recommendation": "APPLY / STRATEGIC_APPLY / SKIP",
-    "reasoning": "Explication claire en 2-3 phrases",
+    "reasoning": "Analyse objective du ROI de la candidature en 2 phrases.",
     "risk_level": "LOW / MEDIUM / HIGH"
   },
   "positioning_strategy": {
-    "cv_highlights": "Quels éléments mettre en avant dans le CV",
-    "cover_letter_angle": "Angle principal pour la lettre de motivation",
-    "interview_prep": "Comment se préparer pour l'entretien"
+    "cv_highlights": "Quels chiffres ou projets spécifiques mettre en gras",
+    "cover_letter_angle": "Le 'Pain Point' principal du recruteur auquel répondre",
+    "interview_prep": "Le sujet technique ou soft-skill sur lequel insister"
   },
   "tactical_examples": [
-    "Paragraphe exemple 1 pour la lettre (2-3 phrases complètes et réutilisables)",
-    "Paragraphe exemple 2 pour la lettre (2-3 phrases complètes et réutilisables)",
-    "Paragraphe exemple 3 pour la lettre (2-3 phrases complètes et réutilisables)"
+    "Preuve d'impact : [Action concrète] + [Contexte] + [Résultat chiffré ou qualitatif]. Bannir les adjectifs 'passionné' ou 'expert'.",
+    "Collaboration : Comment une compétence technique a aidé l'équipe ou le métier à avancer.",
+    "Résolution : Un exemple de problème complexe résolu sans ego, axé sur la solution."
   ],
   "interview_traps": [
-    "Pièges techniques ou comportementaux probables"
+    "Questions déstabilisantes liées à la stack ou au secteur d'activité"
   ],
   "missions": [
-    "3-5 responsabilités principales du poste"
+    "Responsabilités réelles reformulées pour en extraire la valeur métier"
   ]
 }
 
