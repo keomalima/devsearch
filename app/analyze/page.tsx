@@ -7,9 +7,10 @@ import { Textarea } from '@/components/ui/textarea'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { AnalysisCard } from '@/components/AnalysisCard'
 import { MatchRateGauge } from '@/components/MatchRateGauge'
+import { StrategicAnalysis } from '@/components/StrategicAnalysis'
 import { Badge } from '@/components/ui/badge'
 import { JobAnalysis } from '@/lib/types'
-import { Loader2, Sparkles, Save, CheckCircle2, AlertCircle, Lightbulb, Target, TrendingUp, Wand2 } from 'lucide-react'
+import { Loader2, Sparkles, Save, CheckCircle2, AlertCircle, Target, Wand2 } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 
 export default function AnalyzePage() {
@@ -323,38 +324,9 @@ export default function AnalyzePage() {
                                 ))}
                             </ul>
                         </AnalysisCard>
-
-                        <AnalysisCard
-                            title="Pourquoi ce poste ?"
-                            description="Alignement avec votre profil"
-                            icon={<TrendingUp className="h-5 w-5 text-blue-500" />}
-                        >
-                            <p className="text-sm leading-relaxed">{analysis.profile_alignment}</p>
-                            <ul className="mt-4 space-y-2">
-                                {analysis.benefits.map((benefit, i) => (
-                                    <li key={i} className="flex gap-2 text-sm">
-                                        <span className="text-green-500">✓</span>
-                                        <span>{benefit}</span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </AnalysisCard>
-
-                        <AnalysisCard
-                            title="Points d'attention"
-                            description="Compétences à développer"
-                            icon={<Lightbulb className="h-5 w-5 text-yellow-500" />}
-                        >
-                            <ul className="space-y-2">
-                                {analysis.gaps.map((gap, i) => (
-                                    <li key={i} className="flex gap-2 text-sm">
-                                        <span className="text-yellow-500">⚠</span>
-                                        <span>{gap}</span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </AnalysisCard>
                     </div>
+
+                    <StrategicAnalysis analysis={analysis} />
                 </div>
             )}
         </div>
